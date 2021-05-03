@@ -166,7 +166,7 @@
         <dependency>
             <groupId>net.sf.saxon</groupId>
             <artifactId>Saxon-HE</artifactId>
-            <version>9.8.0-8</version>
+            <version>10.3</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -407,7 +407,7 @@
                     <dependency>
                         <groupId>net.sf.saxon</groupId>
                         <artifactId>Saxon-HE</artifactId>
-                        <version>9.4</version>
+                        <version>10.3</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -534,7 +534,7 @@
                                         </goals>
                                     </pluginExecutionFilter>
                                     <action>
-                                        <execute />
+                                        <execute/>
                                     </action>
                                 </pluginExecution>
                                 <pluginExecution>
@@ -547,7 +547,7 @@
                                         </goals>
                                     </pluginExecutionFilter>
                                     <action>
-                                        <ignore />
+                                        <ignore/>
                                     </action>
                                 </pluginExecution>
                                 <pluginExecution>
@@ -560,7 +560,7 @@
                                         </goals>
                                     </pluginExecutionFilter>
                                     <action>
-                                        <execute />
+                                        <execute/>
                                     </action>
                                 </pluginExecution>
                             </pluginExecutions>
