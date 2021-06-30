@@ -20,7 +20,7 @@ please [help us fund and support EPUBCheck](https://www.w3.org/publishing/epubch
 
 Check the [releases page](https://github.com/w3c/epubcheck/releases) to get the latest distribution.
 
-[EPUBCheck 4.2.4](https://github.com/w3c/epubcheck/releases/tag/v4.2.4) is the latest production-ready release, to be used to validate both EPUB 2 and 3 files. EPUB 3 publications are checked against the EPUB 3.2 family of specifications.
+[EPUBCheck 4.2.6](https://github.com/w3c/epubcheck/releases/tag/v4.2.6) is the latest production-ready release, to be used to validate both EPUB 2 and 3 files. EPUB 3 publications are checked against the EPUB 3.2 family of specifications.
 
 ## Documentation
 
@@ -33,8 +33,6 @@ Historical archives of discussions prior to October 2017 are stored at the old [
 ## Building EPUBCheck
 
 To build epubcheck from the sources you need Java Development Kit (JDK) 1.7 or above and [Apache Maven](http://maven.apache.org/) 3.0 or above installed.
-
-You will also need Python to be able to run the BookReporter and related tools.
 
 Build and run tests:
 

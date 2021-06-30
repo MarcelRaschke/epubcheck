@@ -144,6 +144,14 @@ class DefaultSeverities implements Severities
     severities.put(MessageId.MED_005, Severity.ERROR);
     severities.put(MessageId.MED_006, Severity.USAGE);
     severities.put(MessageId.MED_007, Severity.ERROR);
+    severities.put(MessageId.MED_008, Severity.ERROR);
+    severities.put(MessageId.MED_009, Severity.ERROR);
+    severities.put(MessageId.MED_010, Severity.ERROR);
+    severities.put(MessageId.MED_011, Severity.ERROR);
+    severities.put(MessageId.MED_012, Severity.ERROR);
+    severities.put(MessageId.MED_013, Severity.ERROR);
+    severities.put(MessageId.MED_014, Severity.ERROR);
+    severities.put(MessageId.MED_015, Severity.USAGE);
 
     // NAV
     severities.put(MessageId.NAV_001, Severity.ERROR);

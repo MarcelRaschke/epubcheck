@@ -66,6 +66,12 @@ Feature: EPUB 3 ▸ Content Documents ▸ Full Publication Checks
     When checking EPUB 'content-xhtml-link-to-local-file-valid'
     Then info HTM-053 is reported
     And no errors or warnings are reported
+
+  Scenario: Do not report escaped hyperlinks to resources in the local file system
+    See issue #1182
+    When checking EPUB 'content-xhtml-link-to-local-file-escaped-valid'
+    Then info HTM-053 is reported 0 times
+    And no errors or warnings are reported
     
   Scenario: Report a hyperlink to a resource missing from the publication
     When checking EPUB 'content-xhtml-link-to-missing-doc-error'
@@ -399,6 +405,10 @@ Feature: EPUB 3 ▸ Content Documents ▸ Full Publication Checks
 
   Scenario: Verify that CSS `font-size: 0` declaration is allowed (issue 922)
     When checking EPUB 'content-css-font-size-zero-valid'
+    Then no errors or warnings are reported
+
+  Scenario: Verify a fragment-only URL does not trigger a "fragment not defined" error 
+    When checking EPUB 'content-css-url-fragment-valid'
     Then no errors or warnings are reported
 
 

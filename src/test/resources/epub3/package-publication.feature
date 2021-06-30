@@ -154,7 +154,7 @@ Feature: EPUB 3 ▸ Packages ▸ Full Publication Checks
 
   Scenario: Verify content documents are identified as containing mathml
     When checking EPUB 'package-mathml-valid'
-    Then no errors or warnings are reported
+    Then no errors or warnings are reported    
 
 
   ###  E.2.4 remote-resources
@@ -172,6 +172,11 @@ Feature: EPUB 3 ▸ Packages ▸ Full Publication Checks
   Scenario: Report the incorrect use of the `remote-resources` property for a resource defined in an `object` `param` element (issue 249)
     When checking EPUB 'package-manifest-prop-remote-resource-object-param-warning'
     Then warning OPF-018 is reported
+    And no other errors or warnings are reported
+
+  Scenario: Report a media overlay document with remote resources but missing the `remote-resources` property
+    When checking EPUB 'resources-remote-audio-in-overlays-missing-property-error'
+    Then error OPF-014 is reported
     And no other errors or warnings are reported
 
 

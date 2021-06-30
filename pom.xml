@@ -11,7 +11,7 @@
 
     <groupId>org.w3c</groupId>
     <artifactId>epubcheck</artifactId>
-    <version>4.2.5-SNAPSHOT</version>
+    <version>4.2.7-SNAPSHOT</version>
 
     <packaging>jar</packaging>
 
@@ -158,10 +158,6 @@
         <tool.build.date>${maven.build.timestamp}</tool.build.date>
     </properties>
 
-	<prerequisites>
-		<maven>3.0</maven>
-	</prerequisites>
-
     <dependencies>
         <dependency>
             <groupId>net.sf.saxon</groupId>
@@ -221,7 +217,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>4.13.1</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -286,6 +282,26 @@
             </resource>
         </resources>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>3.0.0-M3</version>
+                <executions>
+                <execution>
+                    <id>enforce-maven</id>
+                    <goals>
+                        <goal>enforce</goal>
+                    </goals>
+                    <configuration>
+                        <rules>
+                            <requireMavenVersion>
+                                <version>3.0</version>
+                            </requireMavenVersion>
+                        </rules>
+                    </configuration>
+                </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -414,7 +430,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>license-maven-plugin</artifactId>
-                <version>1.14</version>
+                <version>1.20</version>
                 <executions>
                     <execution>
                         <id>thirdparty-licenses</id>
@@ -423,7 +439,16 @@
                         </goals>
                         <configuration>
                             <includedScopes>runtime,compile</includedScopes>
-                            <fileTemplate>${project.basedir}/src/main/licenses/third-party.ftl</fileTemplate>
+                            <fileTemplate>${project.basedir}/src/main/licenses/THIRD-PARTY.ftl</fileTemplate>
+                            <missingFile>${project.basedir}/src/main/licenses/THIRD-PARTY.properties</missingFile>
+                            <deployMissingFile>false</deployMissingFile>
+                            <useMissingFile>true</useMissingFile>
+                            <includedScopes>runtime,compile</includedScopes>
+                            <licenseMerges>
+                                <licenseMerge>Apache License, Version 2.0|The Apache Software License, Version 2.0|Apache 2.0</licenseMerge>
+                                <licenseMerge>The 3-Clause BSD License|The BSD License|3-clause BSD license</licenseMerge>
+                                <licenseMerge>The MIT License|MIT license</licenseMerge>
+                            </licenseMerges>
                         </configuration>
                     </execution>
                 </executions>
